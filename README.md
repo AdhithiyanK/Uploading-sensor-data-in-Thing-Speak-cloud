@@ -1,3 +1,4 @@
+###
 # Uploading temperature sensor data in Thing Speak cloud
 
 # AIM:
@@ -71,12 +72,44 @@ Automatically act on your data and communicate using third-party services like T
 
 
 # PROGRAM:
+```
+const int trigPin = 9;
+const int echoPin = 10;
+
+long duration;
+int distance;
+void setup() {
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+Serial.begin(9600);
+}
+
+void loop() 
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance= duration*0.034/2;
+  Serial.print("Distance: ");
+  Serial.println(distance);
+}
+```
+
 
 # CIRCUIT DIAGRAM:
 
+![280510965-f82593fe-4135-4d47-a420-319983022fd4](https://github.com/AdhithiyanK/Uploading-sensor-data-in-Thing-Speak-cloud/assets/121029258/b48a8105-3c05-4557-9051-fa37330b988f)
+
 # OUTPUT:
 
+![280510981-eba0010e-cb59-4442-aabf-690ac8937bdc](https://github.com/AdhithiyanK/Uploading-sensor-data-in-Thing-Speak-cloud/assets/121029258/c927eedb-bd2b-45b4-90ea-cb25caebc358)
+
+
 # RESULT:
+
 
 Thus the temperature sensor values are updated in the Thing speak using ESP32 controller.
 
