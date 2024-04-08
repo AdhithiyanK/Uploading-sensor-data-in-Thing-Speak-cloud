@@ -1,4 +1,6 @@
-###
+### NAME:ADHITHIYA.K
+### REG NO:212222230006
+
 # Uploading temperature sensor data in Thing Speak cloud
 
 # AIM:
